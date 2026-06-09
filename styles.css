@@ -96,7 +96,7 @@ body {
     }
 }
 
-/* Navigation */
+/* ###################### Navigation ######################### */
 nav {
     background-color: rgb(20, 20, 20);
     padding: 1rem 0;
@@ -107,7 +107,7 @@ nav {
     max-height: 5vh;
 
     a {
-        font-size: clamp(0.6rem, 0.8vw, 1.2rem);
+        font-size: clamp(0.7rem, 0.8vw, 1.2rem);
     }
 }
 
@@ -361,7 +361,7 @@ main {
         flex-wrap: wrap;
         gap: 2vw;
 
-        span{
+        span {
             background-color: transparent;
         }
     }
@@ -378,11 +378,11 @@ main {
     }
 }
 
-.tech{
-        margin: 2em 38% 1em 6%;
-    }
+.tech {
+    margin: 2em 38% 1em 6%;
+}
 
-/* Footer */
+/* ###################### Footer ######################*/
 footer {
     background-color: rgb(20, 20, 20);
     color: white;
@@ -397,6 +397,10 @@ footer {
         width: 12vw;
         display: flex;
         justify-content: space-between;
+    }
+
+    .footLinks:first-child{
+        justify-content: space-around;
     }
 
     ul {
@@ -421,7 +425,7 @@ footer {
         margin-left: 3%;
 
         a {
-            font-size: clamp(0.5rem, 1.4vw, 1rem);
+            font-size: clamp(0.7rem, 1.4vw, 1rem);
         }
     }
 
@@ -521,6 +525,39 @@ footer {
         }
 
     }
+
+    .aboutPage {
+        margin: 0 3%;
+        display: block;
+        height: 100%;
+
+        section {
+            height: auto;
+            grid-template-columns: 3fr 8fr;
+            margin-bottom: 3em;
+
+            h3 {
+                margin: 0 0 2em 0;
+            }
+
+            p {
+                padding-right: 3em;
+            }
+        }
+
+        .background {
+            border-left: none;
+            padding-left: 0;
+        }
+
+        .stack-container {
+            padding-right: 3em;
+        }
+    }
+
+    .tech {
+        margin: 4em 28% 1em 3%;
+    }
 }
 
 /* Mobile */
@@ -534,7 +571,7 @@ footer {
         margin-left: 6%;
 
         a {
-            font-size: clamp(1rem, 2.4vw, 1.2rem);
+            font-size: clamp(0.7rem, 2.6vw, 1.2rem);
         }
     }
 
@@ -613,7 +650,7 @@ footer {
 
         section:first-child {
             display: flex;
-            height: 45vh;
+            height: 50vh;
 
             p {
                 display: static;
@@ -628,7 +665,7 @@ footer {
                 display: none;
                 position: absolute;
                 top: -10vh;
-                width: 450%;
+                width: 45vw;
                 margin-left: 15vw;
             }
 
@@ -670,33 +707,77 @@ footer {
                 .projectPic {
                     position: absolute;
                     top: 15vh;
-                    right: auto;
-                    width: 400%;
+                    right: -65vw;
+                    width: 90vw;
                 }
 
                 .projectPic2 {
                     position: absolute;
                     top: 10vh;
-                    right: auto;
-                    width: 400%;
+                    right: -63vw;
+                    width: 90vw;
                 }
 
                 .projectPic3 {
                     position: absolute;
                     top: 8vh;
-                    right: auto;
-                    width: 220%;
+                    right: -52vw;
+                    width: 90vw;
                 }
             }
         }
     }
 
     footer {
-        margin: 2em 10% 1em 7%;
+        margin: 2em 10% 3em 7%;
 
         .footLinks {
             width: 35vw;
         }
 
+    }
+
+    .aboutPage {
+        margin: 0 3%;
+        display: block;
+        height: 100%;
+
+        section:first-child {
+            height: auto;
+            display: grid;
+            grid-template-columns: 3fr 8fr;
+        }
+
+        section {
+            height: auto;
+            display: grid;
+            grid-template-columns: 3fr 8fr;
+            margin-bottom: 3em;
+
+            h3 {
+                margin: 0 0 2em 0;
+            }
+
+            p {
+                padding-right: 1em;
+            }
+        }
+
+        section:last-child{
+            height:auto;
+        }
+
+        .background {
+            border-left: none;
+            padding-left: 0;
+        }
+
+        .stack-container {
+            padding-right: 1em;
+        }
+    }
+
+    .tech {
+        margin: 4em 8% 3em 3%;
     }
 }

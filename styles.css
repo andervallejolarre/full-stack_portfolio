@@ -1,0 +1,702 @@
+/* Font Faces */
+@font-face {
+    font-family: 'NB Grotesk';
+    src: url('./fonts/NBGrotesk-45Mager.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'NB Grotesk';
+    src: url('./fonts/NBGrotesk-45RMager.ttf') format('truetype');
+    font-weight: 300;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'NB Grotesk';
+    src: url('./fonts/NBGrotesk-55Normal.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'NB Grotesk';
+    src: url('./fonts/NBGrotesk-55RNormal.ttf') format('truetype');
+    font-weight: 400;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'NB Grotesk';
+    src: url('./fonts/NBGrotesk-65Halbfett.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'NB Grotesk';
+    src: url('./fonts/NBGrotesk-65RHalbfett.ttf') format('truetype');
+    font-weight: 600;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'NB Grotesk';
+    src: url('./fonts/NBGrotesk-75Fett.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'NB Grotesk';
+    src: url('./fonts/NBGrotesk-75RFett.ttf') format('truetype');
+    font-weight: 700;
+    font-style: italic;
+}
+
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'NB Grotesk', sans-serif;
+    font-size: clamp(0.5rem, 0.9vw, 1rem);
+    line-height: 1.6;
+    background-color: rgb(20, 20, 20);
+    color: white;
+
+    ul,
+    ol {
+        list-style-position: inside;
+    }
+
+    a {
+        color: #fff;
+        font-weight: 500;
+        transition: color 0.3s ease;
+    }
+
+    a:hover {
+        color: rgb(118, 118, 118);
+    }
+
+    span {
+        background-color: rgb(118, 118, 118);
+        text-decoration: none;
+    }
+
+    span:hover {
+        background-color: rgb(225, 225, 225);
+        color: rgb(20, 20, 20);
+        transition: color 0.3s ease;
+    }
+}
+
+/* Navigation */
+nav {
+    background-color: rgb(20, 20, 20);
+    padding: 1rem 0;
+    margin-left: 6%;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    max-height: 5vh;
+
+    a {
+        font-size: clamp(0.6rem, 0.8vw, 1.2rem);
+    }
+}
+
+/* Main Content */
+main {
+    height: 78vh;
+    max-width: 1440px;
+    margin: 0 6%;
+    display: grid;
+    grid-template-columns: 3fr 8fr 5fr 8fr;
+
+    /* ###################### HOME ######################### */
+
+    .hover1 {
+        position: relative;
+    }
+
+    .profilePic {
+        display: none;
+        position: absolute;
+        top: 15vh;
+        width: 500%;
+    }
+
+    .hover1:hover .profilePic {
+        display: block;
+    }
+
+    section {
+        height: 78vh;
+
+        p {
+            position: relative;
+            top: 30vh;
+        }
+
+        .hover2 {
+            position: relative;
+        }
+
+        .l-shape {
+            display: none;
+            position: absolute;
+            top: 8vh;
+            left: 8vw;
+            width: 150%;
+        }
+
+        .hover2:hover .l-shape {
+            display: block;
+            color: #fff;
+        }
+
+        .straight {
+            display: none;
+            position: absolute;
+            top: 12vh;
+            left: 42vw;
+            width: 150%;
+        }
+
+        .hover2:hover .straight {
+            display: block;
+            color: #fff;
+        }
+
+        .straightDown,
+        .straightDown2,
+        .straightDown3 {
+            display: none;
+            position: absolute;
+            top: 35vh;
+            left: 51vw;
+            width: 120%;
+        }
+
+        .hover3 {
+            position: relative;
+        }
+
+        .l-shape2 {
+            display: none;
+            position: absolute;
+            top: -11vh;
+            left: 1vw;
+            width: 150%;
+        }
+
+        .hover3:hover .l-shape2 {
+            display: block;
+            color: #fff;
+        }
+
+        li {
+            display: flex;
+            gap: 20px;
+            /* this is the space between number and text */
+            counter-increment: my-counter;
+        }
+
+        li::before {
+            content: counter(my-counter) ".";
+            flex-shrink: 0;
+            /* prevents the number from shrinking */
+        }
+
+        .rootLine {
+            padding-right: 10%;
+        }
+
+        .aboveRootLine {
+            position: relative;
+            top: 18vh;
+        }
+
+        .underRootLine {
+            position: relative;
+            top: 36vh;
+        }
+
+        .secondUnderRootLine {
+            position: relative;
+            top: 38vh;
+        }
+
+        .hover4 {
+            position: relative;
+        }
+
+        .artPortPic {
+            display: none;
+            position: absolute;
+            width: 300%;
+            top: -20vh;
+            right: -30vw;
+        }
+
+        .hover4:hover .artPortPic {
+            display: block;
+        }
+
+        .hover5 {
+            position: relative;
+        }
+
+        .projectPic {
+            display: none;
+            position: absolute;
+            top: 17vh;
+            width: 360%;
+            right: -15vw;
+        }
+
+        .hover5:hover .projectPic {
+            display: block;
+        }
+
+        .hover6 {
+            position: relative;
+        }
+
+        .projectPic2 {
+            display: none;
+            position: absolute;
+            top: 12vh;
+            width: 360%;
+            right: -15vw;
+        }
+
+        .hover6:hover .projectPic2 {
+            display: block;
+        }
+
+        .hover7 {
+            position: relative;
+        }
+
+        .projectPic3 {
+            display: none;
+            position: absolute;
+            top: 7vh;
+            width: 210%;
+            right: -10vw;
+        }
+
+        .hover7:hover .projectPic3 {
+            display: block;
+        }
+
+        .projectList {
+            display: grid;
+            grid-template-columns: 1fr 5fr 6fr;
+            gap: 0px;
+
+            a:first-child {
+                text-decoration: none;
+            }
+        }
+    }
+}
+
+/* ###################### ABOUT ######################### */
+
+.aboutPage {
+    height: 78vh;
+    max-width: 1440px;
+    margin: 0 6%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    section {
+        display: grid;
+        grid-template-columns: 3fr 9fr;
+        gap: 2vh;
+
+        h2 {
+            margin-top: 2em;
+        }
+
+        h3 {
+            margin: 0 0 2em 1em;
+        }
+
+
+        li {
+            display: flex;
+            gap: 10px;
+            counter-increment: none;
+        }
+
+        li::before {
+            content: "—";
+            flex-shrink: 0;
+        }
+
+        p {
+            position: static;
+            top: auto;
+            margin-bottom: 1em;
+            padding-right: 2em;
+        }
+    }
+
+    .background {
+        border-left: 1px solid grey;
+        padding-left: 2em;
+    }
+
+    .stack-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 2vw;
+
+        span{
+            background-color: transparent;
+        }
+    }
+
+    .primary {
+        /* your strongest style — bigger, brighter */
+        font-weight: 700;
+        font-size: small;
+    }
+
+    .secondary {
+        /* medium weight */
+        text-decoration: underline;
+    }
+}
+
+.tech{
+        margin: 2em 38% 1em 6%;
+    }
+
+/* Footer */
+footer {
+    background-color: rgb(20, 20, 20);
+    color: white;
+    text-align: start;
+    align-items: end;
+    justify-content: space-between;
+    margin: 2em 44% 1em 6%;
+    max-height: 17vh;
+    display: flex;
+
+    .footLinks {
+        width: 12vw;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    ul {
+        list-style: none;
+
+        .interactive {
+            display: flex;
+            gap: 15px;
+        }
+    }
+}
+
+/* Tablets */
+@media (max-width: 890px) {
+
+    body {
+        font-size: clamp(0.5rem, 1.4vw, 1rem);
+
+    }
+
+    nav {
+        margin-left: 3%;
+
+        a {
+            font-size: clamp(0.5rem, 1.4vw, 1rem);
+        }
+    }
+
+    main {
+        height: 80vh;
+        margin: 0 3%;
+        display: grid;
+        grid-template-columns: 3fr 8fr 5fr;
+
+        .profilePic {
+            top: 10vh;
+            width: 500%;
+        }
+
+        section {
+            height: 40vh;
+
+            p {
+                top: 15vh;
+            }
+
+            .aboveRootLine {
+                top: 8vh;
+            }
+
+            .underRootLine {
+                top: 25vh;
+            }
+
+            .l-shape {
+                top: 12vh;
+                left: 12vw;
+            }
+
+            .hover2:hover .straight {
+                display: none;
+            }
+
+            .hover2:hover .straightDown {
+                display: block;
+                color: #fff;
+            }
+
+            .l-shape2 {
+                top: -6vh;
+                left: 4vw;
+                width: 100%;
+            }
+
+            .hover4 {
+                text-decoration: none;
+                color: #fff;
+                font-weight: 500;
+                transition: color 0.3s ease;
+                background-color: transparent;
+            }
+
+            .hover4:hover .artPortPic {
+                display: none;
+            }
+
+            .projectPic {
+                top: -10vh;
+                right: 20vw;
+                width: 420%;
+            }
+
+            .projectPic2 {
+                top: -15vh;
+                right: 20vw;
+                width: 420%;
+            }
+
+            .projectPic3 {
+                top: -18vh;
+                right: 18vw;
+                width: 820%;
+            }
+        }
+
+        section:last-child {
+            grid-column: 3/4;
+            grid-row: 2;
+            top: 0vh;
+
+            .secondUnderRootLine {
+                top: 20vh;
+            }
+        }
+    }
+
+    footer {
+        margin: 2em 17% 1em 6%;
+
+        .footLinks {
+            width: 24vw;
+        }
+
+    }
+}
+
+/* Mobile */
+@media (max-width: 580px) {
+
+    body {
+        font-size: clamp(0.5rem, 2.6vw, 1.2rem);
+    }
+
+    nav {
+        margin-left: 6%;
+
+        a {
+            font-size: clamp(1rem, 2.4vw, 1.2rem);
+        }
+    }
+
+    main {
+        height: auto;
+        margin: 0 7%;
+        display: block;
+
+        section {
+            display: block;
+            height: 35vh;
+
+            p {
+                display: inline-block;
+                top: auto;
+            }
+
+            .hover2:hover .l-shape {
+                display: none;
+            }
+
+            .hover2:hover .straight {
+                display: none;
+            }
+
+            .straightDown {
+                top: 15vh;
+                left: 10vw;
+                width: 180%;
+            }
+
+            .straightDown2 {
+                display: none;
+                top: 67vh;
+                left: 9vw;
+                width: 120%;
+            }
+
+            .hover2:hover .straightDown {
+                display: block;
+                color: #fff;
+            }
+
+            .hover2:hover .straightDown2 {
+                display: block;
+                color: #fff;
+            }
+
+            .hover3:hover .l-shape2 {
+                display: none;
+            }
+
+            .straightDown3 {
+                top: 15vh;
+                left: 5vw;
+                width: 180%;
+            }
+
+            .hover3:hover .straightDown3 {
+                display: block;
+                color: #fff;
+            }
+
+            .hover4 {
+                text-decoration: none;
+                color: #fff;
+                font-weight: 500;
+                transition: color 0.3s ease;
+                background-color: transparent;
+            }
+
+            .hover4:hover .artPortPic {
+                display: none;
+            }
+        }
+
+        section:first-child {
+            display: flex;
+            height: 45vh;
+
+            p {
+                display: static;
+                top: 10vh;
+            }
+
+            .hover1 {
+                position: relative;
+            }
+
+            .profilePic {
+                display: none;
+                position: absolute;
+                top: -10vh;
+                width: 450%;
+                margin-left: 15vw;
+            }
+
+            .hover1:hover .profilePic {
+                display: inline-block;
+            }
+        }
+
+        .underAbove {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+
+            .aboveRootLine {
+                grid-column: 2;
+                grid-row: 1;
+                display: inline-block;
+                top: auto;
+            }
+
+            .underRootLine {
+                grid-column: 1;
+                grid-row: 1;
+                display: inline-block;
+                top: auto;
+            }
+        }
+
+        section:last-child {
+            height: 60vh;
+            margin-top: 10vh;
+
+            .secondUnderRootLine {
+                top: auto;
+
+                .projectList {
+                    grid-template-columns: 1fr 6fr 5fr;
+                }
+
+                .projectPic {
+                    position: absolute;
+                    top: 15vh;
+                    right: auto;
+                    width: 400%;
+                }
+
+                .projectPic2 {
+                    position: absolute;
+                    top: 10vh;
+                    right: auto;
+                    width: 400%;
+                }
+
+                .projectPic3 {
+                    position: absolute;
+                    top: 8vh;
+                    right: auto;
+                    width: 220%;
+                }
+            }
+        }
+    }
+
+    footer {
+        margin: 2em 10% 1em 7%;
+
+        .footLinks {
+            width: 35vw;
+        }
+
+    }
+}

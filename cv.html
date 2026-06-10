@@ -1,36 +1,143 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Project 3 - My Portfolio</title>
+    <meta name="description"
+        content="Curriculum vitae for Ander Vallejo Larre, a full-stack developer focused on JavaScript, React, web interfaces, and practical digital products.">
+    <meta name="keywords"
+        content="Ander Vallejo Larre, CV, resume, full-stack developer, JavaScript, React, web development, portfolio">
+    <meta name="author" content="Ander Vallejo Larre">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Curriculum Vitae | Ander Vallejo Larre">
+    <meta property="og:description"
+        content="View Ander Vallejo Larre's CV, skills, background, and selected project experience.">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="en_US">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Curriculum Vitae | Ander Vallejo Larre">
+    <meta name="twitter:description"
+        content="View Ander Vallejo Larre's CV, skills, background, and selected project experience.">
+    <title>CV | Ander Vallejo Larre</title>
     <link rel="stylesheet" href="styles.css">
 </head>
-<body>
+
+<body class="cvBody">
     <nav>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="project1.html">Project 1</a></li>
-            <li><a href="project2.html">Project 2</a></li>
-            <li><a href="project3.html">Project 3</a></li>
-        </ul>
+        <div>
+            <a href="index.html">HOME</a>
+            <a href="about.html">ABOUT</a>
+        </div>
+        <button class="printButton" type="button" onclick="window.print()">PRINT CV</button>
     </nav>
 
-    <header>
-        <h1>Project 3</h1>
-    </header>
+    <main class="cvPage">
+        <section class="cvIntro">
+            <p class="eyebrow">CURRICULUM VITAE</p>
+            <h1>ANDER VALLEJO LARRE</h1>
+            <p class="lead">Full-stack developer with a background in digital arts, focused on
+                JavaScript, React, and practical user-facing interfaces.</p>
+            <div class="cvMeta">
+                <a href="mailto:ander.vallejo.larre@gmail.com">ander.vallejo.larre@gmail.com</a>
+                <a href="tel:+34671788030">+34 671 788 030</a>
+                <a href="https://www.linkedin.com/in/ander-vallejo-larre-74938b141/" target="_blank"
+                    rel="noreferrer">LinkedIn</a>
+                <a href="https://github.com/andervallejolarre" target="_blank" rel="noreferrer">GitHub</a>
+            </div>
+        </section>
 
-    <main>
-        <section>
-            <h2>Project Title</h2>
-            <p>Add project description here...</p>
-            <p><strong>Technologies:</strong> Add technologies used</p>
+        <section class="cvGrid">
+            <article class="profile">
+                <h2>Profile</h2>
+                <p>I am a full-stack developer based in Barcelona. My strongest interest is
+                    building structured, scalable front-end experiences with solid back-end support.</p>
+                <p>I work well with systems that combine interaction, data, and design. JavaScript and React are my main
+                    stack, and I am comfortable moving across the full stack when the project needs it.</p>
+            </article>
+
+            <article class="languages">
+                <h2>Languages</h2>
+                <ul class="languageList">
+                    <li>Spanish <progress class="bar" value="10" max="10"></progress>Native</li>
+                    <li>English<progress class="bar" value="8" max="10"></progress>Fluent</li>
+                    <li>Catalá<progress class="bar" value="3" max="10"></progress>Beginer</li>
+                </ul>
+            </article>
+
+            <article class="education">
+                <h2>Education</h2>
+                <div class="cvItem">
+                    <h3>Full Stack Web Development Bootcamp</h3>
+                    <p>Barcelona Code School, Spain. April - June 2026 </p>
+                </div>
+                <div class="cvItem">
+                    <h3>MA in Audiovisual Innovation and Interactive Environments</h3>
+                    <p>BAU Centro Universitario de Artes y Diseño en Barcelona, Spain. 2023 - 2024</p>
+                </div>
+                <div class="cvItem">
+                    <h3>BA in Contemporary Music and Jazz Piano</h3>
+                    <p>San Francisco de Quito, Ecuador (Berklee International Network). 2015 - 2017</p>
+                </div>
+                <div class="cvItem">
+                    <h3>BA in Music Production and Sound Engineering</h3>
+                    <p>Universidad Sanfrancisco de Quito, Ecuador (Berklee International Network). 2010 - 2015</p>
+                </div>
+            </article>
+
+            <article class="skills">
+                <h2>Technical Skills</h2>
+                <ul class="skillList">
+                    <li>JavaScript</li>
+                    <li>React</li>
+                    <li>React Native</li>
+                    <li>Node.js / Express</li>
+                    <li>MongoDB</li>
+                    <li>HTML & CSS</li>
+                    <li>REST APIs</li>
+                    <li>Git & GitHub</li>
+                    <li>Deployment</li>
+                    <li>Arduino, Processing, Pure Data</li>
+                </ul>
+            </article>
+
+            <article class="jobs">
+                <h2>Job Experience</h2>
+                <div class="cvItem">
+                    <h3>Creative Technologist / Freelance</h3>
+                    <p>I worked in the intersection of art and technology. Developed my own project When... Plants... Sing, 
+                        presented across festivals, installations, and media programs. Collaborated with multidisciplinary teams 
+                        to build interactive experiences and art installations. Working across immersive sound, creative coding, 
+                        digital fabrication, electronics, and visuals.</p>
+                </div>
+                <div class="cvItem">
+                    <h3>Music Producer / Freelance</h3>
+                    <p>Independent music producer working with solo artists and bands across production, arrangement, and mixing. 
+                        Developed my own electronic music projects while taking on a range of additional work including playback 
+                        production for live shows and corporate audiovisual materials.</p>
+                </div>
+                <div class="cvItem">
+                    <h3>Sound Technician / In/Out Studios & Arpeggio Music</h3>
+                    <p>Recording and live sound engineer working simultaneously across two fronts. At In/Out Studio, handled 
+                        recording, mixing, and sound editing for studio productions. In parallel, worked with Arpeggio Music 
+                        on live events, designing and building sound systems and managing the full technical operation of 
+                        sound and lights throughout each event. </p>
+                </div>
+            </article>
+
+            <article class="hobbies">
+                <h2>Interests &amp; Hobbies</h2>
+                <ul class="hobbyList">
+                    <li>Music Digging</li>
+                    <li>Plants & Botanics</li>
+                    <li>Electronics</li>
+                    <li>Specialty Coffee</li>
+                    <li>Basketball</li>
+                    <li>Contemporary arts</li>
+                </ul>
+            </article>
         </section>
     </main>
-
-    <footer>
-        <p>&copy; 2024 My Portfolio. All rights reserved.</p>
-    </footer>
 </body>
+
 </html>

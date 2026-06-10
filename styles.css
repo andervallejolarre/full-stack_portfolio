@@ -1,4 +1,4 @@
-/* Font Faces */
+/* ###################### FONT FACES ###################### */
 @font-face {
     font-family: 'NB Grotesk';
     src: url('./fonts/NBGrotesk-45Mager.ttf') format('truetype');
@@ -55,7 +55,7 @@
     font-style: italic;
 }
 
-/* General Styles */
+/* ###################### GLOBAL STYLES ######################### */
 * {
     margin: 0;
     padding: 0;
@@ -96,7 +96,7 @@ body {
     }
 }
 
-/* ###################### Navigation ######################### */
+/* ###################### NAVIGATION ######################### */
 nav {
     background-color: rgb(20, 20, 20);
     padding: 1rem 0;
@@ -111,7 +111,7 @@ nav {
     }
 }
 
-/* Main Content */
+/* ###################### GLOBAL MAIN ###################### */
 main {
     height: 78vh;
     max-width: 1440px;
@@ -204,14 +204,12 @@ main {
         li {
             display: flex;
             gap: 20px;
-            /* this is the space between number and text */
             counter-increment: my-counter;
         }
 
         li::before {
             content: counter(my-counter) ".";
             flex-shrink: 0;
-            /* prevents the number from shrinking */
         }
 
         .rootLine {
@@ -309,6 +307,38 @@ main {
     }
 }
 
+/* ###################### FOOTER ###################### */
+
+footer {
+    background-color: rgb(20, 20, 20);
+    color: white;
+    text-align: start;
+    align-items: end;
+    justify-content: space-between;
+    margin: 2em 44% 1em 6%;
+    max-height: 17vh;
+    display: flex;
+
+    .footLinks {
+        width: 12vw;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .footLinks:first-child {
+        justify-content: space-around;
+    }
+
+    ul {
+        list-style: none;
+
+        .interactive {
+            display: flex;
+            gap: 15px;
+        }
+    }
+}
+
 /* ###################### ABOUT ######################### */
 
 .aboutPage {
@@ -382,39 +412,201 @@ main {
     margin: 2em 38% 1em 6%;
 }
 
-/* ###################### Footer ######################*/
-footer {
-    background-color: rgb(20, 20, 20);
-    color: white;
-    text-align: start;
-    align-items: end;
-    justify-content: space-between;
-    margin: 2em 44% 1em 6%;
-    max-height: 17vh;
-    display: flex;
+/* ###################### CV ######################### */
 
-    .footLinks {
-        width: 12vw;
+.cvBody {
+    background-color: rgb(20, 20, 20);
+
+    nav {
         display: flex;
         justify-content: space-between;
+        margin-right: 10%;
+
+        div {
+            a {
+                margin-right: 3em;
+            }
+        }
     }
 
-    .footLinks:first-child{
-        justify-content: space-around;
+    p {
+        position: static;
     }
 
-    ul {
-        list-style: none;
+    section {
+        height: auto;
 
-        .interactive {
-            display: flex;
-            gap: 15px;
+    }
+}
+
+nav .printButton {
+    background-color: rgb(255, 255, 255);
+    border: 0;
+    color: inherit;
+    font: inherit;
+    cursor: pointer;
+}
+
+main.cvPage {
+    height: auto;
+    max-width: 1440px;
+    margin: 0 6% 4rem;
+    display: block;
+}
+
+.cvIntro {
+    display: grid;
+    gap: 1.5rem;
+    padding: 2rem 0 1.5rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.cvIntro h1 {
+    font-size: clamp(1.5rem, 4vw, 3.2rem);
+    line-height: 0.95;
+    max-width: 14ch;
+}
+
+.eyebrow {
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    opacity: 0.7;
+}
+
+.lead {
+    max-width: 80ch;
+    font-size: clamp(1rem, 1.2vw, 1.2rem);
+}
+
+.cvMeta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem 2rem;
+}
+
+.cvGrid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.5rem;
+    padding-top: 1.5rem;
+}
+
+article {
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    padding: 1.25rem;
+    min-height: 100%;
+    font-size: clamp(0.6rem, 1vw, 1rem);
+
+    p:last-child {
+        margin-top: 1em;
+    }
+}
+
+article h2 {
+    margin-bottom: 1rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+article h3 {
+    margin-bottom: 0.35rem;
+}
+
+.cvItem+.cvItem {
+    margin-top: 1rem;
+}
+
+.languageList {
+    display: block;
+    gap: 0.5rem 1rem;
+    font-size: clamp(0.8rem, 1vw, 1rem);
+    list-style: none;
+
+    li {
+        display: grid;
+        grid-template-columns: 3fr 6fr 3fr;
+        justify-content: space-between;
+        margin-bottom: 2em;
+        justify-items: center;
+        align-items: center;
+
+        .bar {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 100%;
+            height: 0.5rem;
+            border: 0;
+            border-radius: 999px;
+            overflow: hidden;
+            background-color: rgb(118, 118, 118);
+            accent-color: white;
+        }
+
+        .bar::-webkit-progress-bar {
+            background-color: rgb(118, 118, 118);
+            border-radius: 999px;
+        }
+
+        .bar::-webkit-progress-value {
+            background-color: white;
+            border-radius: 999px;
+        }
+
+        .bar::-moz-progress-bar {
+            background-color: white;
+            border-radius: 999px;
         }
     }
 }
 
-/* Tablets */
+.languageList li::before {
+    content: none;
+    margin-right: 0.5rem;
+}
+
+.skillList {
+    margin: 2rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem 1rem;
+    font-size: clamp(0.8rem, 1vw, 1rem);
+    list-style: none;
+}
+
+.skillList li::before {
+    content: "—";
+    margin-right: 0.5rem;
+}
+
+.jobs {
+    grid-column: 1 / -1;
+}
+
+.hobbies {
+    grid-column: 1 / -1;
+}
+
+.hobbyList {
+    display: flex;
+    gap: 0.5rem 1rem;
+    font-size: clamp(0.8rem, 1vw, 1rem);
+    list-style: none;
+    justify-content: space-between;
+    text-transform: uppercase;
+}
+
+.hobbyList li::before {
+    content: none;
+    margin-right: 0.5rem;
+}
+
+/* ###################### MEDIA QUERIES ######################*/
+
+/* ######################## TABLETS ##########################*/
+
 @media (max-width: 890px) {
+
+    /* HOME */
 
     body {
         font-size: clamp(0.5rem, 1.4vw, 1rem);
@@ -523,8 +715,9 @@ footer {
         .footLinks {
             width: 24vw;
         }
-
     }
+
+    /* ABOUT */
 
     .aboutPage {
         margin: 0 3%;
@@ -558,10 +751,54 @@ footer {
     .tech {
         margin: 4em 28% 1em 3%;
     }
+
+    /* CV */
+
+    .cbBody {
+        main.cvPage {
+            margin: 0 3% 3rem;
+        }
+
+        .profile {
+            grid-column: 1 / -1;
+        }
+
+        .languages {
+            grid-column: 1;
+            grid-row: 4;
+        }
+
+        .education {
+            grid-column: 1 / -1;
+            grid-row: 2;
+        }
+
+        .skills {
+            grid-column: 2;
+            grid-row: 4;
+
+            .skillList {
+                grid-template-columns: 1fr;
+                gap: 0.5rem 1rem;
+            }
+        }
+
+        .jobs {
+            grid-column: 1 / -1;
+            grid-row: 3;
+        }
+
+        .hobbies {
+            grid-column: 1 / -1;
+        }
+    }
 }
 
-/* Mobile */
+/* ######################## MOBILE ##########################*/
+
 @media (max-width: 580px) {
+
+    /* HOME */
 
     body {
         font-size: clamp(0.5rem, 2.6vw, 1.2rem);
@@ -737,6 +974,8 @@ footer {
 
     }
 
+    /* ABOUT */
+
     .aboutPage {
         margin: 0 3%;
         display: block;
@@ -763,8 +1002,8 @@ footer {
             }
         }
 
-        section:last-child{
-            height:auto;
+        section:last-child {
+            height: auto;
         }
 
         .background {
@@ -779,5 +1018,223 @@ footer {
 
     .tech {
         margin: 4em 8% 3em 3%;
+    }
+
+    /* CV */
+
+    .cvBody {
+        .cvPage {
+            padding-bottom: 2rem;
+
+            .cvIntro {
+                display: grid;
+            }
+
+            .cvGrid {
+                grid-template-columns: 1fr;
+                width: 100%;
+                min-width: 0;
+                gap: 1rem;
+
+                article {
+                    min-height: auto;
+                    min-width: 0;
+                    width: 100%;
+                    font-size: clamp(0.7rem, 3vw, 1rem);
+                    overflow-wrap: anywhere;
+                    word-break: break-word;
+
+                    p,
+                    li,
+                    h2,
+                    h3 {
+                        overflow-wrap: anywhere;
+                        word-break: break-word;
+                    }
+                }
+
+                .languages {
+                    grid-row: 5;
+
+                    .languageList {
+                        margin: 0;
+
+                        li {
+                            grid-template-columns: minmax(0, 1fr);
+                            justify-items: start;
+                            gap: 0.5rem;
+                            text-align: left;
+
+                            .bar {
+                                width: 100%;
+                            }
+                        }
+                    }
+                }
+
+                .education {
+                    grid-row: 2;
+                }
+
+                .skills {
+                    grid-column: 1;
+                    grid-row: 4;
+
+                    .skillList {
+                        margin: 0;
+                        grid-template-columns: 1fr;
+                        gap: 0.35rem 0;
+                    }
+
+                    .skillList li {
+                        min-width: 0;
+                    }
+                }
+
+                .jobs {
+                    grid-row: 3;
+                }
+
+                .hobbies {
+                    grid-row: 6;
+
+                    .hobbyList {
+                        margin: 0;
+                        flex-wrap: wrap;
+                        justify-content: flex-start;
+                        gap: 0.5rem 1rem;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* ######################## PRINT CV ##########################*/
+
+@media print {
+    @page {
+        margin: 10mm;
+    }
+
+    * {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+
+    body,
+    .cvBody {
+        background: #fff !important;
+        color: #000 !important;
+        font-size: 10pt;
+        line-height: 1.35;
+    }
+
+    nav,
+    .printButton {
+        display: none !important;
+    }
+
+    main.cvPage {
+        margin: 0;
+        max-width: none;
+    }
+
+    .cvIntro {
+        padding: 0 0 8pt;
+        margin-bottom: 8pt;
+        gap: 0.35rem;
+        border-bottom: 1px solid #111;
+    }
+
+    .cvIntro h1 {
+        max-width: none;
+        font-size: 18pt;
+        line-height: 1;
+    }
+
+    .lead {
+        max-width: none;
+        font-size: 10.5pt;
+    }
+
+    .cvMeta {
+        gap: 0.25rem 0.9rem;
+        font-size: 9pt;
+    }
+
+    .cvGrid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 0.9rem;
+        padding-top: 0.85rem;
+    }
+
+    .cvGrid article {
+        border: 1px solid #ccc;
+        padding: 8pt 9pt;
+        min-height: auto;
+        break-inside: avoid;
+        page-break-inside: avoid;
+        font-size: 9.5pt;
+    }
+
+    .cvGrid article h2 {
+        margin-bottom: 0.6rem;
+        font-size: 9.5pt;
+    }
+
+    .cvGrid article h3 {
+        font-size: 9.5pt;
+    }
+
+    .profile,
+    .education,
+    .jobs,
+    .hobbies {
+        grid-column: 1 / -1;
+    }
+
+    .languages {
+        grid-column: 1;
+    }
+
+    .skills {
+        grid-column: 2;
+    }
+
+    .cvGrid .skills .skillList {
+        margin: 0;
+        grid-template-columns: 1fr;
+        gap: 0.25rem 0;
+    }
+
+    .cvGrid .languages .languageList {
+        margin: 0;
+    }
+
+    .cvGrid .languages .languageList li {
+        grid-template-columns: 3fr 6fr 3fr;
+        gap: 0.5rem;
+        margin-bottom: 0.6rem;
+        justify-items: center;
+        font-size: 9.5pt;
+    }
+
+    .cvGrid .languages .languageList .bar {
+        height: 0.4rem;
+    }
+
+    .cvGrid .hobbies .hobbyList {
+        margin: 0;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        gap: 0.35rem 0.9rem;
+        text-transform: none;
+    }
+
+    a {
+        color: inherit !important;
+        text-decoration: none;
     }
 }

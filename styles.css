@@ -219,6 +219,12 @@ main {
         .aboveRootLine {
             position: relative;
             top: 18vh;
+            display: flex;
+
+            p {
+                position: relative;
+                top: auto;
+            }
         }
 
         .underRootLine {
@@ -254,9 +260,9 @@ main {
         .projectPic {
             display: none;
             position: absolute;
-            top: 17vh;
-            width: 360%;
-            right: -15vw;
+            top: 14vh;
+            width: 250%;
+            right: -16vw;
         }
 
         .hover5:hover .projectPic {
@@ -270,9 +276,9 @@ main {
         .projectPic2 {
             display: none;
             position: absolute;
-            top: 12vh;
-            width: 360%;
-            right: -15vw;
+            top: 8vh;
+            width: 250%;
+            right: -16vw;
         }
 
         .hover6:hover .projectPic2 {
@@ -287,8 +293,8 @@ main {
             display: none;
             position: absolute;
             top: 7vh;
-            width: 210%;
-            right: -10vw;
+            width: 130%;
+            right: -5vw;
         }
 
         .hover7:hover .projectPic3 {
@@ -297,12 +303,8 @@ main {
 
         .projectList {
             display: grid;
-            grid-template-columns: 1fr 5fr 6fr;
+            grid-template-columns: 1fr 11fr;
             gap: 0px;
-
-            a:first-child {
-                text-decoration: none;
-            }
         }
     }
 }
@@ -394,6 +396,12 @@ footer {
         span {
             background-color: transparent;
         }
+
+        span:hover {
+            background-color: transparent;
+            color: inherit;
+            transition: none;
+        }
     }
 
     .primary {
@@ -404,7 +412,8 @@ footer {
 
     .secondary {
         /* medium weight */
-        text-decoration: underline;
+        font-size: 110%;
+        text-decoration: none;
     }
 }
 
@@ -656,6 +665,11 @@ article h3 {
                 display: none;
             }
 
+            .straightDown {
+                top: 36vh;
+                left: 51vw;
+            }
+
             .hover2:hover .straightDown {
                 display: block;
                 color: #fff;
@@ -681,20 +695,20 @@ article h3 {
 
             .projectPic {
                 top: -10vh;
-                right: 20vw;
-                width: 420%;
+                right: 25vw;
+                width: 240%;
             }
 
             .projectPic2 {
                 top: -15vh;
-                right: 20vw;
-                width: 420%;
+                right: 27vw;
+                width: 200%;
             }
 
             .projectPic3 {
-                top: -18vh;
+                top: -15vh;
                 right: 18vw;
-                width: 820%;
+                width: 540%;
             }
         }
 
@@ -931,7 +945,7 @@ article h3 {
         }
 
         section:last-child {
-            height: 60vh;
+            height: 72vh;
             margin-top: 10vh;
 
             .secondUnderRootLine {
@@ -944,22 +958,22 @@ article h3 {
                 .projectPic {
                     position: absolute;
                     top: 15vh;
-                    right: -65vw;
-                    width: 90vw;
+                    right: -47vw;
+                    width: 85vw;
                 }
 
                 .projectPic2 {
                     position: absolute;
                     top: 10vh;
-                    right: -63vw;
-                    width: 90vw;
+                    right: -41vw;
+                    width: 85vw;
                 }
 
                 .projectPic3 {
                     position: absolute;
                     top: 8vh;
-                    right: -52vw;
-                    width: 90vw;
+                    right: -49vw;
+                    width: 85vw;
                 }
             }
         }
@@ -1136,7 +1150,7 @@ article h3 {
     }
 
     main.cvPage {
-        margin: 0;
+        margin: 3em;
         max-width: none;
     }
 

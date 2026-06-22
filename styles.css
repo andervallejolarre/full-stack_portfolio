@@ -128,8 +128,8 @@ main {
     .profilePic {
         display: none;
         position: absolute;
-        top: 15vh;
-        width: 500%;
+        top: 10vh;
+        width: 450%;
     }
 
     .hover1:hover .profilePic {

@@ -237,7 +237,11 @@ main {
             top: 38vh;
         }
 
-        .hover4 {
+        .hover4,
+        .hover5,
+        .hover6,
+        .hover7,
+        .hover8 {
             position: relative;
         }
 
@@ -253,10 +257,6 @@ main {
             display: block;
         }
 
-        .hover5 {
-            position: relative;
-        }
-
         .projectPic {
             display: none;
             position: absolute;
@@ -267,10 +267,6 @@ main {
 
         .hover5:hover .projectPic {
             display: block;
-        }
-
-        .hover6 {
-            position: relative;
         }
 
         .projectPic2 {
@@ -285,11 +281,19 @@ main {
             display: block;
         }
 
-        .hover7 {
-            position: relative;
+        .projectPic3 {
+            display: none;
+            position: absolute;
+            top: 8vh;
+            width: 200%;
+            right: -12vw;
         }
 
-        .projectPic3 {
+        .hover7:hover .projectPic3 {
+            display: block;
+        }
+
+        .projectPic4 {
             display: none;
             position: absolute;
             top: 7vh;
@@ -297,7 +301,7 @@ main {
             right: -5vw;
         }
 
-        .hover7:hover .projectPic3 {
+        .hover8:hover .projectPic4 {
             display: block;
         }
 

@@ -1,31 +1,227 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Project 1 - My Portfolio</title>
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
     <nav>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="project1.html">Project 1</a></li>
-            <li><a href="project2.html">Project 2</a></li>
-            <li><a href="project3.html">Project 3</a></li>
-        </ul>
+        <a href="index.html">HOME</a>
+        <a href="about.html">ABOUT</a>
     </nav>
-
-    <header>
-        <h1>Project 1</h1>
-    </header>
-
     <main>
+        <h1>DigitalPlant</h1>
         <section>
-            <h2>Project Title</h2>
-            <p>Add project description here...</p>
-            <p><strong>Technologies:</strong> Add technologies used</p>
+            <h3>What is it?</h3>
+            <p>DigitalPlant is a Tamagotchi-style web app built to host your digital plant and help you take care of it.
+            </p>
+            <p>You register, choose a plant type, and from that moment your plant is alive. The app fetches live weather
+                from your location, compares
+                it against your plant's ideal conditions, and calculates whether your plant is thriving or struggling.
+                You can intervene by watering,
+                adding nutrients, enabling protection, kind of what you would normally do with a real plant.</p>
+            <p>The result is a dynamic, data-driven experience that updates continuously and keeps the user engaged
+                through real consequences.</p>
+
+            <h3>Why it's interesting technically?</h3>
+            <ul>There are some complex features going on here:</ul>
+            <li>It pulls <strong>live external data</strong> (real weather from Open-Meteo API)</li>
+            <li>It runs that data through a <strong>custom balance engine</strong> in the backend</li>
+            <li>It compares weather against <strong>plant-specific tolerance ranges</strong></li>
+            <li>It turns <strong>user actions into measurable state changes</strong></li>
+            <li>It updates <strong>continuously over time</strong>, not just on demand</li>
+
+            <p>A nice combination of: external data + backend logic + user input + time-based progression.</p>
+
+            <h3>Quick software architechture overview</h3>
+            <div className="macroArch">
+                <p className="line1Pr">Browser (React + Vite)</p>
+                <svg width="12" height="12" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor">
+                    <path d="M10 17l-5-5+5-5v10z" />
+                </svg>
+                <p className="line1Sec">Axios + JWT</p>
+                <svg width="12" height="12" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor">
+                    <path d="M10 17l5-5-5-5v10z" />
+                </svg>
+                <p className="line1Pr">Express API (Node.js)</p>
+                <svg width="12" height="12" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor">
+                    <path d="M10 17l-5-5+5-5v10z" />
+                </svg>
+                <p className="line1Sec">Mongoose</p>
+                <svg width="12" height="12" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor">
+                    <path d="M10 17l5-5-5-5v10z" />
+                </svg>
+                <p className="line1Pr">MongoDB Atlas</p>
+                <div>
+                    <svg width="12" height="12" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor">
+                        <path d="M0 0l5+5+5-5v10z" />
+                    </svg>
+                    <p className="line2Sec">HTTP</p>
+                    <svg width="12" height="12" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor">
+                        <path d="M0 12l5-5+5+5v10z" />
+                    </svg>
+                </div>
+                <p className="line2Pr">Open-Meteo Weather API</p>
+            </div>
+
+            <p>The frontend handles display and user interaction. The backend handles all logic — weather fetching,
+                plant calculations,and state updates. The two communicate through a REST API secured with JWT
+                authentication.</p>
+
+        </section>
+        <section>
+            <div>
+                <h2>Features Breakdown</h2>
+                <h3>Authentication</h3>
+                <p>JWT-based login and registration. On app load, the token is verified before any plant data is
+                    fetched.
+                    Once authenticated, the full experience unlocks — plant display, controls, and the timer that
+                    triggers
+                    periodic updates.
+
+                    **Why JWT:** stateless authentication — the server doesn't need to store session data. The token
+                    carries
+                    the user's identity and is verified on every protected request.</p>
+
+                <img src="" alt="">
+                <h3>Weather + Geolocation</h3>
+                <ul>The app uses the browser's native geolocation API to get the user's coordinates. Those coordinates
+                    are
+                    sent to the
+                    backend, which fetches a 7-day forecast from Open-Meteo and returns averaged values:</ul>
+                <li>Max / min temperature</li>
+                <li>Humidity</li>
+                <li>UV index</li>
+                <li>Precipitation</li>
+                <p><strong>Why Open-Meteo:</strong> free, no API key required, reliable forecast data. Ideal for a
+                    project
+                    at this stage.</p>
+                <img src="" alt="">
+                <h3>Plant Type Intelligence</h3>
+                <p>When creating a profile, the user chooses a plant type. Each type has defined tolerance ranges for
+                    temperature,
+                    humidity, and UV radiation. The app doesn't just show weather data — it compares it against what the
+                    specific plant
+                    actually needs.</p>
+                <p>This is what makes the simulation meaningful rather than decorative.</p>
+                <img src="" alt="">
+                <h3>Action Controls</h3>
+                <ul>Three toggles give the user direct influence over the plant's state:</ul>
+                <li><strong>Watering</strong> — hydration</li>
+                <li><strong>Nutrients</strong> — periodic boost</li>
+                <li><strong>Protection</strong> — shields against extreme conditions</li>
+                <p>Each toggle immediately updates local state, sends a POST request to the backend, and feeds into the
+                    balance engine's
+                    next calculation. This is the "player input" layer of the simulation.</p>
+                <img src="" alt="">
+                <h3>Balance Engine</h3>
+                <p>The most technically interesting part of the app. Lives in `plantsController.js` on the backend.</p>
+                <ul>`POST /api/plant/balance` receives weather averages, user plant state, and plant type rules. It
+                    computes:</ul>
+                <li>Temperature balance</li>
+                <li>Humidity balance</li>
+                <li>Radiation balance</li>
+                <li>Action effectiveness</li>
+
+                <ul>And outputs:</ul>
+                <li>Progress delta</li>
+                <li>Stress level</li>
+                <li>Level changes</li>
+                <li>Recommendations</li>
+
+                <ul>Key behavior:</ul>
+                <li>Progress updates every 12 hours</li>
+                <li>Hit 100 progress → level increases</li>
+                <li>Drop to 0 → level can decrease</li>
+                <li>Recommendations are generated dynamically from balance results</li>
+
+                <p>**Why in the backend:** keeping this logic server-side means the user can't manipulate the simulation
+                    from the browser. It also keeps the frontend clean — it displays results, it doesn't calculate them.
+                </p>
+
+                <img src="" alt="">
+            </div>
+            <div>
+                <h2>Tech Specs</h2>
+                <h3>Stack selected</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th scope="col">Tool</th>
+                            <th scope="col">Role</th>
+                            <th scope="col">Why</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">React + Vite</th>
+                            <th>Frontend</th>
+                            <th>Fast dev workflow, component-based UI</th>
+                        </tr>
+                        <tr>
+                            <th scope="row">React Router</th>
+                            <th>Navigation</th>
+                            <th>Client-side routing without page reloads</th>
+                        </tr>
+                        <tr>
+                            <th scope="row">Axios</th>
+                            <th>HTTP client</th>
+                            <th>Cleaner than fetch, handles JWT header injection automatically</th>
+                        </tr>
+                        <tr>
+                            <th scope="row">JWT + localStorage</th>
+                            <th>Auth</th>
+                            <th>Stateless, simple to implement for this scale</th>
+                        </tr>
+                        <tr>
+                            <th scope="row">Express + Node.js</th>
+                            <th>Backend API</th>
+                            <th>Familiar stack, aligns with bootcamp training</th>
+                        </tr>
+                        <tr>
+                            <th scope="row">MongoDB + Mongoose</th>
+                            <th>Database</th>
+                            <th>Flexible document model fits the plant state structure</th>
+                        </tr>
+                        <tr>
+                            <th scope="row">Open-Meteo API</th>
+                            <th>Weather data</th>
+                            <th>Free, no key required, reliable</th>
+                        </tr>
+                        <tr>
+                            <th scope="row">react-geolocated</th>
+                            <th>Geolocation</th>
+                            <th>Handles browser permission flow cleanly</th>
+                        </tr>
+                    </tbody>
+                </table>
+                <ul>
+                    <h3>Data flow end-to-end</h3>
+                </ul>
+                <li>User logs in</li>
+                <li>JWT token stored in localStorage</li>
+                <li>Plant data fetched from GET /api/plant/plant-info</li>
+                <li>Geolocation requested from browser</li>
+                <li>Weather fetched from GET /api/plant/weather?lat=...&lng=...</li>
+                <li>Plant type fetched from GET /api/plant/plant-type-info</li>
+                <li>All data passed to Balance Engine</li>
+                <li>Balance results displayed on main screen</li>
+                <li>Timer triggers refresh every 12 hours</li>
+                <li>User toggles action controls</li>
+                <li>POST /api/plant/action → Balance Engine recalculates</li>
+                <li>UI updates with new state</li>
+            </div>
+        </section>
+        <section>
+            <h2>Project state</h2>
+            <h3>Present</h3>
+            <p></p>
+            <h3>Future</h3>
+            <p></p>
         </section>
     </main>
 
@@ -33,4 +229,5 @@
         <p>&copy; 2024 My Portfolio. All rights reserved.</p>
     </footer>
 </body>
+
 </html>

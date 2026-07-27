@@ -616,20 +616,23 @@ article h3 {
 /* ###################### PROJECT 1 PAGE ###################### */
 .project1Page {
     font-size: clamp(0.85rem, 1vw, 1.05rem);
-    display:flex;
+    display: flex;
     flex-direction: column;
     align-items: center;
 
-    nav{
+    nav {
         display: block;
         width: 100%;
 
-        a{
-            margin-right:3em;
+        a {
+            margin-right: 3em;
         }
-    };
+    }
+
+    ;
 
     main {
+        height: 100%;
         display: block;
         min-height: auto;
         justify-content: center;
@@ -660,6 +663,19 @@ article h3 {
         display: block;
     }
 
+    .header {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    footer {
+        width: 100%;
+        margin: 0 0 2em 0;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }
 
     .introProject1 {
         margin-bottom: 5em;
@@ -744,7 +760,6 @@ article h3 {
 }
 
 .bodyProject1 {
-    padding-bottom: 5em;
     height: fit-content;
 
     ul {
@@ -777,11 +792,11 @@ article h3 {
             padding: 10px;
         }
 
-        .authImg{
+        .authImg {
             max-height: 500px;
         }
 
-        .actionImg{
+        .actionImg {
             max-height: 500px;
         }
 
@@ -790,8 +805,8 @@ article h3 {
             flex-direction: column;
             gap: 4em;
 
-            .balanceMeter{
-                height:45%;
+            .balanceMeter {
+                height: 45%;
             }
         }
     }

@@ -629,8 +629,6 @@ article h3 {
         }
     }
 
-    ;
-
     main {
         height: 100%;
         display: block;
@@ -1381,6 +1379,11 @@ article h3 {
 
     /* Project1 */
     .project1Page {
+        main {
+            height: 100%;
+            display: block;
+        }
+
         .introProject1 {
             .macroArch {
                 grid-template-columns: repeat(3, 1fr);
@@ -1421,6 +1424,10 @@ article h3 {
                 }
 
             }
+        }
+
+        .bodyProject1 {
+            height: 100%;
         }
     }
 }

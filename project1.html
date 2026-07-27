@@ -21,6 +21,8 @@
             <p>You register, choose a plant type, and from that moment your plant is alive. The app fetches live weather from your location, compares it against your plant's ideal conditions, and calculates whether your plant is thriving or struggling. You can intervene by watering, adding nutrients, enabling protection, kind of what you would normally do with a real plant.</p>
             <p>The result is a dynamic, data-driven experience that updates continuously and keeps the user engaged through real consequences.</p>
 
+            <img class="mainImg" src="./images/Project1_media/main_loggedIn.png" alt="main panel" width="70%">
+
             <h3>Why it's interesting technically?</h3>
             <p>There are some complex features going on here:</p>
             <ul>
@@ -71,13 +73,16 @@
             <p>The frontend handles display and user interaction. The backend handles all logic — weather fetching, plant calculations, and state updates. The two communicate through a REST API secured with JWT authentication.</p>
         </section>
         <section class="bodyProject1">
-            <div>
+            <div class="featureBreakdown">
                 <h2>FEATURES BREAKDOW</h2>
+                <div>
                 <h3>Authentication</h3>
                 <p>JWT-based login and registration. On app load, the token is verified before any plant data is fetched. Once authenticated, the full experience unlocks — plant display, controls, and the timer that triggers periodic updates.</p>
                 <p><strong>Why JWT:</strong> stateless authentication — the server doesn't need to store session data. The token carries the user's identity and is verified on every protected request.</p>
+                </div>
+                <img class="authImg" src="./images/Project1_media/account_auth_vertical.png" alt="register and logIn">
 
-                <img src="" alt="">
+                <div>
                 <h3>Weather + Geolocation</h3>
                 <p>The app uses the browser's native geolocation API to get the user's coordinates. Those coordinates are sent to the backend, which fetches a 7-day forecast from Open-Meteo and returns averaged values:</p>
                 <ul>
@@ -87,11 +92,17 @@
                     <li>Precipitation</li>
                 </ul>
                 <p><strong>Why Open-Meteo:</strong> free, no API key required, reliable forecast data. Ideal for a project at this stage.</p>
-                <img src="" alt="">
+                </div>
+                <img src="./images/Project1_media/weather.png" alt="weather screen" >
+
+                <div>
                 <h3>Plant Type Intelligence</h3>
                 <p>When creating a profile, the user chooses a plant type. Each type has defined tolerance ranges for temperature, humidity, and UV radiation. The app doesn't just show weather data — it compares it against what the specific plant actually needs.</p>
                 <p>This is what makes the simulation meaningful rather than decorative.</p>
-                <img src="" alt="">
+                </div>
+                <img src="./images/Project1_media/plant_type.png" alt="plant type scree" >
+
+                <div>
                 <h3>Action Controls</h3>
                 <p>Three toggles give the user direct influence over the plant's state:</p>
                 <ul>
@@ -100,7 +111,10 @@
                     <li><strong>Protection</strong> — shields against extreme conditions</li>
                 </ul>
                 <p>Each toggle immediately updates local state, sends a POST request to the backend, and feeds into the balance engine's next calculation. This is the "player input" layer of the simulation.</p>
-                <img src="" alt="">
+                </div>
+                <img class="actionImg" src="./images/Project1_media/action vertical.png" alt="action control panel">
+
+                <div>
                 <h3>Balance Engine</h3>
                 <p>The most technically interesting part of the app. Lives in <code>plantsController.js</code> on the backend.</p>
                 <p><code>POST /api/plant/balance</code> receives weather averages, user plant state, and plant type rules. It computes:</p>
@@ -125,7 +139,11 @@
                     <li>Recommendations are generated dynamically from balance results</li>
                 </ul>
                 <p><strong>Why in the backend:</strong> keeping this logic server-side means the user can't manipulate the simulation from the browser. It also keeps the frontend clean — it displays results, it doesn't calculate them.</p>
-                <img src="" alt="">
+                </div>
+                <div class="meters">
+                <img src="./images/Project1_media/period_balance_ Info.png" alt="balance screen" >
+                <img class="balanceMeter" src="./images/Project1_media/period_balance_meters.png" alt="balance meters" >
+                </div>
             </div>
             <div>
                 <h2>TECH SPECS</h2>

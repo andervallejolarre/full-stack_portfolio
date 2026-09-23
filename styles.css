@@ -1175,7 +1175,7 @@ article h3 {
             .profilePic {
                 display: none;
                 position: absolute;
-                top: -10vh;
+                top: -8vh;
                 width: 45vw;
                 margin-left: 15vw;
             }
@@ -1217,22 +1217,29 @@ article h3 {
 
                 .projectPic {
                     position: absolute;
-                    top: 15vh;
+                    top: 20vh;
                     right: -47vw;
                     width: 85vw;
                 }
 
                 .projectPic2 {
                     position: absolute;
-                    top: 10vh;
-                    right: -41vw;
+                    top: 14vh;
+                    right: -71vw;
                     width: 85vw;
                 }
 
                 .projectPic3 {
                     position: absolute;
-                    top: 8vh;
-                    right: -49vw;
+                    top: 11vh;
+                    right: -72vw;
+                    width: 85vw;
+                }
+
+                .projectPic4 {
+                    position: absolute;
+                    top: 11vh;
+                    right: -68vw;
                     width: 85vw;
                 }
             }

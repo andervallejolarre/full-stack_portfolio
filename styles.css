@@ -273,7 +273,7 @@ main {
             display: none;
             position: absolute;
             top: 8vh;
-            width: 250%;
+            width: 210%;
             right: -16vw;
         }
 
@@ -940,9 +940,15 @@ article h3 {
             }
 
             .projectPic3 {
-                top: -15vh;
-                right: 18vw;
-                width: 540%;
+                top: -14vh;
+                right: 32vw;
+                width: 170%;
+            }
+
+            .projectPic4 {
+                top: -14vh;
+                right: 14vw;
+                width: 680%;
             }
         }
 
